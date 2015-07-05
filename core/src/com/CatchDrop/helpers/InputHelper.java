@@ -1,18 +1,17 @@
-package com.test1.game;
+package com.CatchDrop.helpers;
 
+import com.CatchDrop.gameObjects.Bucket;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 
 public class InputHelper implements InputProcessor{
 	
-	private ObjectSupporter obj;
-	
-	int outer_x;
-	int outer_y;
+	public int outer_x;
+	public int outer_y;
 
-	public InputHelper(final ObjectSupporter objgen) {
-	
-		this.obj = objgen;
-		outer_x = objgen.bucket.x;
+	public InputHelper(Bucket bucket) {
+		
+		outer_x = Gdx.graphics.getWidth() / 2; //начальное положение ведёрка
 		
 	}
 	
@@ -39,12 +38,9 @@ public class InputHelper implements InputProcessor{
 	@Override
 	public boolean touchDown(final int screenX, final int screenY, final int pointer, final int button) {
 		
-//		System.out.println("touchDown");
 		outer_x = screenX;
 		outer_y = screenY;
-//		System.out.println("Tapped at [" + screenX + "," + screenY + "]");
-		
-		
+			
 		return false;
 	}
 

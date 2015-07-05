@@ -1,10 +1,10 @@
-package com.test1.game;
+package com.CatchDrop.gameObjects;
 
+import com.CatchDrop.helpers.AssetLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 
-public class Bucket extends Actor{
+public class Bucket {
 	
 	int x;
 	int y;
@@ -22,6 +22,38 @@ public class Bucket extends Actor{
 		rotate = 0;
 		texture = AssetLoader.bucket_img;
 		coliz = new Rectangle(x + 5, y + 45, (int) (width * 0.85), height / 6);
+	}
+	
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public Texture getTexture() {
+		return texture;
+	}
+
+	public float getRotate() {
+		return rotate;
+	}
+
+	public Rectangle getColizShape(){
+		return coliz;
+	}
+	
+	public Bucket getBucket(){
+		return this;
 	}
 	
 	
@@ -48,12 +80,5 @@ public class Bucket extends Actor{
 		}else if (rotate < 0 - 1){
 			rotate += 100 * delta;
 		}
-	}
-	
-	@Override
-	public void act(float delta) {
-		
-		
-		
 	}
 }
