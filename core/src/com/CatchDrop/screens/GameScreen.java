@@ -29,7 +29,7 @@ public class GameScreen implements Screen {
 	private ShapeRenderer shaper;
 	private BitmapFont fonter;
 	
-	private boolean debug_mode = true;
+	private boolean debug_mode = false;
 	private GameTimers timer;
 	private Bucket bucket;
 	private float runTime;
