@@ -1,8 +1,5 @@
 package com.CatchDrop.screens;
 
-import sun.util.resources.cldr.en.CurrencyNames_en_TT;
-import sun.util.resources.cldr.ur.CurrencyNames_ur;
-
 import com.CatchDrop.helpers.AssetLoader;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -22,7 +19,7 @@ public class StartMenuScreen implements Screen{
 	private int stopPoint;
 	private int currentPoint;
 	
-	public StartMenuScreen(Game game) {
+	public StartMenuScreen(final Game game) {
 		this.game = game;
 		cam = new OrthographicCamera();
 		cam.setToOrtho(false, 800, 480);
@@ -44,13 +41,15 @@ public class StartMenuScreen implements Screen{
 	}
 
 	@Override
-	public void render(float delta) {
+	public void render(final float delta) {
 		Gdx.gl.glClearColor(0, 0, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
         batcher.begin();
         
-        if (currentPoint > stopPoint) currentPoint -= 200 * delta;
+        if (currentPoint > stopPoint) {
+			currentPoint -= 200 * delta;
+		}
         AssetLoader.font_StartScreen.draw(batcher, "Welcome to CatchDropGame", 120, currentPoint);
         
         if (currentPoint <= stopPoint ){
@@ -66,7 +65,7 @@ public class StartMenuScreen implements Screen{
 	}
 
 	@Override
-	public void resize(int width, int height) {
+	public void resize(final int width, final int height) {
 		// TODO Auto-generated method stub
 		
 	}
